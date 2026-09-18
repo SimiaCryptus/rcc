@@ -1,21 +1,12 @@
 {
     "id": "rcc",
     "title": "RCC — Rational Certificate Complexity",
-    "description": "Treats every convergence sequence as a rational certificate engine, measures certificate bit-length against demanded tolerance ε, and stratifies mathematical constants into cost classes RC₁/RC₂/RC₃.",
-    "tags": [
-        "computational-complexity",
-        "numerical-analysis",
-        "mathematical-constants",
-        "hypergeometric-series",
-        "diophantine-approximation",
-        "philosophy-of-mathematics"
-    ],
+    "pitch": "The foundation of the trilogy. Treats every convergence sequence as a rational certificate engine, measures its bit-length versus demanded tolerance ε, and stratifies constants into cost classes (RC₁/RC₂/RC₃). Establishes the regularity condition, a Θ(log 1/ε) lower bound, and the central separation algebraic irrationals vs. π and e. <em>It fixes the vocabulary the other two essays invoke.</em>",
     "category": "essay",
     "href": "index.html",
     "readme": "README.md",
     "order": 2,
     "section": "essays",
     "icon": "RCC",
-    "subtitle": "Trilogy I · the foundational vocabulary",
-    "pitch": "The foundation of the trilogy. Treats every convergence sequence as a rational certificate engine, measures its bit-length versus demanded tolerance ε, and stratifies constants into cost classes (RC₁/RC₂/RC₃). Establishes the regularity condition, a Θ(log 1/ε) lower bound, and the central separation algebraic irrationals vs. π and e. <em>It fixes the vocabulary the other two essays invoke.</em>"
+    "subtitle": "Trilogy I · the foundational vocabulary"
 }
