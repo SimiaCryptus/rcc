@@ -14,9 +14,21 @@
 Every method for approximating an irrational number is, at heart, a little factory
 that stamps out fractions. Feed it patience — more terms, more iterations — and it
 hands you back a better fraction: 3/1, then 22/7, then 333/106, and so on toward π.
-We call each such factory a **rational certificate engine**, and the fraction it
-produces at any given moment is a _certificate_: a finite, checkable, honest-to-goodness
-piece of arithmetic that says "the answer is at least this close."
+We call each such factory an **engine**, and the fraction it produces at any given
+moment is a prefix of the number's **address**. The engine itself is a finite program.
+Each output pins the number down to a smaller cell. The full address is infinite, and
+the framework asks _how_ infinite: how fast the address must grow as the cell shrinks.
+
+> **A note on the name.** "Rational Certificate Complexity" is historical, and the word
+> _certificate_ is misleading. A certificate is something cheaper to check than to
+> produce. A fraction is not: nothing about 355/113 alone tells you it is near π, and the
+> only way to confirm it is to recompute π far enough to compare. Read RCC as
+> _rational addressing complexity_. It measures address length, not the size of a proof.
+
+This is the same question Diophantine approximation asks ("how well do fractions
+approach this number?"), but posed without first assuming the real line exists. A number,
+here, is whatever an engine addresses. Two engines address the same number when their
+cells keep overlapping at every resolution.
 
 The framework asks a deceptively simple question. If you demand an answer accurate to
 within some tolerance ε, two costs come due:
@@ -47,10 +59,16 @@ irrationals like √2 are genuinely cheap, while the classical series for π are
 both find their concrete home in the **`nam` interactive lab**, where the honest cost of
 each digit is put on the screen.
 
-There is an information-theoretic floor underneath all of this. To specify any number to
-within ε, you need at least log₂(1/ε) bits — that is simply how much information the
-answer contains. An engine that spends only about that many bits is doing the best any
-method possibly could; it is _optimal_ in a provable, no-cleverness-can-beat-it sense.
+There is an information-theoretic floor underneath all of this. There are at most 2^B
+addresses of length B bits, so together they can distinguish at most 2^B cells. Resolving
+_typical_ numbers to within ε therefore takes at least about log₂(1/ε) bits of address.
+An engine that spends only about that many bits is on the floor.
+
+Be careful, though: this is a statement about all addresses of a given length, not a law
+binding each individual number. A particular number can have unusually short addresses at
+some scales; 355/113 is one for π. Whether a _specific_ number's best addresses sit on the
+floor at every scale is exactly the question of its irrationality exponent. For π, that
+question is open (see `../openai/diophantine_rcc.md`).
 
 ---
 
